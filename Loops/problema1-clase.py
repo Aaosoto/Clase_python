@@ -71,7 +71,6 @@ for i in range(cant_sucursal):
 
 print("-"*10)
 print("Total de ventas",total_ventas_sucursales)
-print(sucursal_max_ventas)
 print("La sucursal con más ventas es",valor_max_ventas)
 print("con total de ventas",producto_mas_caro)
 print("El producto más caro fue",sucursal_de_venta)
