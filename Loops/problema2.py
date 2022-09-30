@@ -1,19 +1,25 @@
-arch = open("A.txt", encoding="utf-8")
-line = arch.readline().strip()
-
 direccion = input("Ingrese A para Norte o B para Sur: ")
-max = -11111
-nombre_mejor_refugio = ""
-distancia_mejor_refugio = 0
-refugios_habitables = 0
-refugios_no_habitables = 0
-total_refugios = 0
+
 
 while direccion != "fin":
+    max = -11111
+    nombre_mejor_refugio = ""
+    distancia_mejor_refugio = 0
+    refugios_habitables = 0
+    refugios_no_habitables = 0
+    total_refugios = 0
+    if direccion == "A":
+        arch = open("A.txt", encoding="utf-8")
+    else:
+        arch = open("B.txt", encoding="utf-8")
+    line = arch.readline().strip()
     while line != "":
         lista = line.split(",")
         nombre_refugio = lista[0]
-        distancia = int(lista[1])-200
+        if direccion == "A":
+            distancia = int(lista[1])-200
+        else:
+            distancia = int(lista[1])+200
         capacidad = int(lista[2])
         suministros = int(lista[3])
         radiacion = lista[4]
